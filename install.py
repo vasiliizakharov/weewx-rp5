@@ -6,9 +6,9 @@ def loader():
 class RP5Installer(ExtensionInstaller):
     def __init__(self):
         super(RP5Installer, self).__init__(
-            version='0.5',
+            version='0.6',
             name='rp5',
-            description='Upload archive data to rp5.ru (Python 3 support)',
+            description='Upload archive data to rp5.ru (HTTPS, pressure, precipitation support)',
             author='Vasili Zakharov',
             author_email='vasiliiazakharov@gmail.com',
             restful_services='user.rp5.StdRP5',
