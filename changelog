@@ -16,3 +16,12 @@ v0.5 17mar2026
 * Updated imports (urllib.request, queue).
 * Replaced sys.maxint with sys.maxsize.
 * Compatibility with WeeWX 4.x and 5.x.
+
+v0.6 29mar2026
+* Replaced syslog with Python logging module (WeeWX 5.x compatibility).
+* API URL changed from HTTP to HTTPS.
+* Added barometer (p0) and rain (rr) fields to uploaded data.
+* Wind speed and gust precision increased from 0 to 1 decimal place.
+* Removed dead Python 2 TypeError fallback in post_request.
+* All HTTP errors now wrapped as FailedPost for uniform retry/backoff behaviour.
+* Default timeout increased from 5s to 10s; default retry_wait from 2s to 5s.
