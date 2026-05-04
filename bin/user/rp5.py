@@ -201,7 +201,7 @@ class RP5Thread(weewx.restx.RESTThread):
             if exc.code in (400, 429):
                 raise weewx.restx.FailedPost(
                     "server returned HTTP %d %s" % (exc.code, exc.reason)
-                )
+                ) from exc
             raise
         except urllib.error.URLError as exc:
-            raise weewx.restx.FailedPost("connection error: %s" % exc.reason)
+            raise weewx.restx.FailedPost("connection error: %s" % exc.reason) from exc
