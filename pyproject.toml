@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weewx-rp5"
+version = "1.0.0"
+description = "WeeWX extension to upload archive weather data to rp5.ru via sgate API"
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Vasilii Zakharov", email = "vasiliiazakharov@gmail.com" },
+]
+maintainers = [
+    { name = "Vasilii Zakharov", email = "vasiliiazakharov@gmail.com" },
+]
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+]
+keywords = ["weewx", "weather", "rp5", "meteorology", "weather-station"]
+
+[project.urls]
+Homepage = "https://github.com/vasiliizakharov/weewx-rp5"
+Repository = "https://github.com/vasiliizakharov/weewx-rp5"
+Issues = "https://github.com/vasiliizakharov/weewx-rp5/issues"
+"Original (Python 2)" = "https://github.com/sapegin-o1eg/weewx-rp5"
+"sgate API docs" = "https://rp5.ru/docs/sgate/ru"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.5",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "N", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
